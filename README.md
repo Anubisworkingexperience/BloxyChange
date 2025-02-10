@@ -1,2 +1,1 @@
-# BloxyChange
-BloxyChange - удобный редактор блок схем
+BloxyChange - Удобный редактор блок-схем
