@@ -1,0 +1,17 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(42px, 1fr));
+  gap: 15px;
+  background-color: rgb(247, 226, 229);
+  padding: 15px;
+  border: 1px solid coral;
+}
+
+.block {
+  width: max-content;
+}
+
+.block:hover {
+  background-color: lightblue;
+}
+

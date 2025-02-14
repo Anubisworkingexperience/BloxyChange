@@ -4,7 +4,7 @@ export function Header() {
   return (
     <>
     <header className="header">
-    <h1>BlooxyCh@nge</h1>
+    <h1>BloxyCh@nge</h1>
     </header>
     </>
   )
