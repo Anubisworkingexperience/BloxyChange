@@ -1,12 +1,12 @@
 import { Header } from './components/Header'
-import { Sidebar } from './components/Sidebar'
+import { WorkArea } from './components/WorkArea'
 
 function App() {
 
   return (
     <>
       <Header />
-      <Sidebar />
+      <WorkArea />
     </>
   )
 }

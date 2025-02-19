@@ -1,0 +1,14 @@
+.board {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-block {
+  border: 2px solid black;
+  display: inline-block;
+  margin: 5px;
+}

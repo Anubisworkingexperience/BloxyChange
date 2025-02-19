@@ -27,10 +27,19 @@ h1 {
   width: 30%;
   height: 100vh;
   border-right: 2px solid coral;
-  // padding-left: 10px;
+  min-width: max-content;
 }
 
 h2 {
   margin-top: 0;
   padding-left: 15px;
+}
+
+
+.work-area {
+  display: flex;
+}
+
+.board {
+  width: 70vw;
 }
