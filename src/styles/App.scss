@@ -5,6 +5,7 @@
 }
 
 body {
+  height: 100vh;
   margin: 0;
   font-family: "Open Sans", serif;
   font-optical-sizing: auto;
@@ -16,6 +17,7 @@ body {
 header {
   background-color: rgb(112, 178, 248);
   padding: 10px;
+  width: 100%;
 }
 
 h1 {

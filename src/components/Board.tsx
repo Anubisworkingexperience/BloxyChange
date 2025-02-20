@@ -1,7 +1,8 @@
 import {Blocks} from "./WorkArea"
 import "../styles/Board.scss"
-import { useState, cloneElement } from "react";
 import React from "react";
+import { BottomPanel } from "./BottomPanel";
+import { useState } from "react";
 
 interface Board {
   blocks: Blocks[];
@@ -10,10 +11,10 @@ interface Board {
 
 export function Board({blocks, toggleBlockActive} : Board) {
 
-  // const strokeColor = block.isActive ? "lime" : "#000000";
+  const [enableGrid, setEnableGrid] = useState<boolean>(false);
 
   return (
-    <div className="board">
+    <div className={`board ${enableGrid ? "board-grid_enabled" : ""}`}>
         {blocks.map(block => (
           <div className="board-block" key={block.id} onClick={() => toggleBlockActive(block.id)}>
             <svg xmlns="http://www.w3.org/2000/svg" className="board-block__image" style={{left: "1px", top: "1px", display: "block", position: "relative", overflow: "hidden"}} viewBox="0 0 42 42" preserveAspectRatio="xMidYMid meet">
@@ -25,6 +26,8 @@ export function Board({blocks, toggleBlockActive} : Board) {
             </svg>
           </div>
         ))}
+        <BottomPanel enableGrid={enableGrid} 
+        setEnableGrid={setEnableGrid}/>
     </div>
   )
 }

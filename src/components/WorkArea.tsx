@@ -33,7 +33,8 @@ export function WorkArea() {
     <>
     <div className="work-area">
       <Sidebar addBlock={addBlock}/>
-      <Board blocks={blocks} toggleBlockActive={toggleBlockActive}/>
+      <Board blocks={blocks}
+       toggleBlockActive={toggleBlockActive}/>
     </div>
     </>
   )
