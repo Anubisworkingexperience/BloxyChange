@@ -5,10 +5,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .board-block {
-  border: 2px solid black;
   display: inline-block;
-  margin: 5px;
+}
+
+.board-block__image {
+  width: 5rem;
+  height: 5rem;
+}
+
+.board-block_active {
+  border: 3px dotted lime;
+}
+
+.board-block_inactive {
+  border: none;
 }

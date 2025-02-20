@@ -1,8 +1,9 @@
 import {Block} from "./Block"
 import "../styles/Sidebar.scss"
 
+type AddBlock = (children: React.ReactNode) => void;
 
-export function Sidebar({addBlock}) {
+export function Sidebar({addBlock} : AddBlock)  {
   return (
     <div className="sidebar">
     <h2>Блоки</h2>
