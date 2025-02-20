@@ -11,7 +11,7 @@ interface Board {
 
 export function Board({blocks, toggleBlockActive} : Board) {
 
-  const [enableGrid, setEnableGrid] = useState<boolean>(false);
+  const [enableGrid, setEnableGrid] = useState<boolean>(true);
 
   return (
     <div className={`board ${enableGrid ? "board-grid_enabled" : ""}`}>
