@@ -11,7 +11,7 @@ interface BottomPanel {
 export function BottomPanel({enableGrid, setEnableGrid, cleanupGrid} : BottomPanel) {
 
   return (
-    <div className="bottomPanel">
+    <div className="bottom-panel">
       <FontAwesomeIcon icon={faPenToSquare}
        className="bottom-panel__icon" onClick={() => setEnableGrid(!enableGrid)}/>
       <FontAwesomeIcon icon={faTrashCan}
