@@ -1,6 +1,6 @@
-import { Sidebar } from "./Sidebar";
 import { Board } from "./Board";
 import { useState } from "react";
+import { Sidebar } from "./Sidebar";
 
 let nextId : number = 0;
 
@@ -32,7 +32,7 @@ export function WorkArea() {
   return (
     <>
     <div className="work-area">
-      <Sidebar addBlock={addBlock}/>
+      <Sidebar addBlock={addBlock} blocks={blocks}/>
       <Board blocks={blocks}
        toggleBlockActive={toggleBlockActive}/>
     </div>

@@ -13,6 +13,8 @@ export function Board({blocks, toggleBlockActive} : Board) {
 
   const [enableGrid, setEnableGrid] = useState<boolean>(true);
 
+  console.log(blocks);
+
   return (
     <div className={`board ${enableGrid ? "board-grid_enabled" : ""}`}>
         {blocks.map(block => (
