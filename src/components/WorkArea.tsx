@@ -23,11 +23,14 @@ export function WorkArea() {
 
   const toggleBlockActive = (id : number) => {
     setBlocks((prevBlocks) =>
-      prevBlocks.map((block) =>
-        block.id === id ? { ...block, isActive: !block.isActive } : block
-      )
+      prevBlocks.map((block) => {
+        if ( block.id !== id && block.isActive) {
+          return {...block, isActive: false}
+        }
+        return block.id === id ? { ...block, isActive: !block.isActive } : block;
+      })
     );
-  }
+  };
 
   return (
     <>
