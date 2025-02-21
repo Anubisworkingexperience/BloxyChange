@@ -16,10 +16,13 @@ export function Board({blocks, toggleBlockActive, cleanupGrid} : Board) {
 
   console.log(blocks);
 
+  const testDelete = () => console.log('delete pressed');
+
   return (
     <div className={`board ${enableGrid ? "board-grid_enabled" : ""}`}>
         {blocks.map(block => (
-          <div className="board-block" key={block.id} onClick={() => toggleBlockActive(block.id)}>
+          <div className="board-block" key={block.id} onClick={() => toggleBlockActive(block.id)}
+          onKeyDown={() => testDelete()}>
             <svg xmlns="http://www.w3.org/2000/svg" className="board-block__image" style={{left: "1px", top: "1px", display: "block", position: "relative", overflow: "hidden"}} viewBox="0 0 42 42" preserveAspectRatio="xMidYMid meet">
                 {React.Children.map(block.children, child => 
                   React.cloneElement(child as React.ReactElement, {
