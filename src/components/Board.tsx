@@ -15,6 +15,8 @@ export function Board({blocks, toggleBlockActive} : Board) {
 
   console.log(blocks);
 
+  // document.onclick = () => unselectAllBlocks();
+
   return (
     <div className={`board ${enableGrid ? "board-grid_enabled" : ""}`}>
         {blocks.map(block => (

@@ -1,6 +1,7 @@
 import { Board } from "./Board";
 import { useState } from "react";
 import { Sidebar } from "./Sidebar";
+import { useEffect } from "react";
 
 let nextId : number = 0;
 
@@ -12,6 +13,21 @@ export interface Blocks {
 
 export function WorkArea() {
   const [blocks, setBlocks] = useState<Blocks[]>([]);
+
+  useEffect(() => {
+    const handleDocumentClick = (e: MouseEvent) => {
+      // Check if click is outside of any block
+      if (!(e.target as Element).closest('.board-block')) {
+        unselectAllBlocks();
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+    
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
 
   function addBlock(children : React.ReactNode, isActive : boolean) {
     console.log("click", blocks);
@@ -29,6 +45,14 @@ export function WorkArea() {
         }
         return block.id === id ? { ...block, isActive: !block.isActive } : block;
       })
+    );
+  };
+
+  const unselectAllBlocks = () => {
+    setBlocks((prevBlocks) =>
+      prevBlocks.map((block) => {
+        return {...block, isActive: false};
+      }) 
     );
   };
 
