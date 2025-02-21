@@ -16,7 +16,6 @@ export function WorkArea() {
 
   useEffect(() => {
     const handleDocumentClick = (e: MouseEvent) => {
-      // Check if click is outside of any block
       if (!(e.target as Element).closest('.board-block')) {
         unselectAllBlocks();
       }
@@ -29,7 +28,7 @@ export function WorkArea() {
     };
   }, []);
 
-  function addBlock(children : React.ReactNode, isActive : boolean) {
+  function addBlock(children : React.ReactNode) {
     console.log("click", blocks);
     setBlocks([
       ...blocks,
@@ -56,12 +55,17 @@ export function WorkArea() {
     );
   };
 
+  const cleanupGrid = () => {
+    setBlocks([]);
+  }
+
   return (
     <>
     <div className="work-area">
       <Sidebar addBlock={addBlock} blocks={blocks}/>
       <Board blocks={blocks}
-       toggleBlockActive={toggleBlockActive}/>
+       toggleBlockActive={toggleBlockActive}
+       cleanupGrid={cleanupGrid}/>
     </div>
     </>
   )

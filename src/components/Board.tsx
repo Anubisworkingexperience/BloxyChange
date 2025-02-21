@@ -7,15 +7,14 @@ import { useState } from "react";
 interface Board {
   blocks: Blocks[];
   toggleBlockActive: (id: number) => void;
+  cleanupGrid: () => void;
 }
 
-export function Board({blocks, toggleBlockActive} : Board) {
+export function Board({blocks, toggleBlockActive, cleanupGrid} : Board) {
 
   const [enableGrid, setEnableGrid] = useState<boolean>(true);
 
   console.log(blocks);
-
-  // document.onclick = () => unselectAllBlocks();
 
   return (
     <div className={`board ${enableGrid ? "board-grid_enabled" : ""}`}>
@@ -31,7 +30,8 @@ export function Board({blocks, toggleBlockActive} : Board) {
           </div>
         ))}
         <BottomPanel enableGrid={enableGrid} 
-        setEnableGrid={setEnableGrid}/>
+        setEnableGrid={setEnableGrid}
+        cleanupGrid={cleanupGrid}/>
     </div>
   )
 }
